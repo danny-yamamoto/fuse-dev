@@ -4,6 +4,7 @@ type UserSource = {
   id: string
   name: string
   avatar_url: string
+  hoge: string
 }
  
 // "Nodes" are the core abstraction of Fuse. Each node represents
@@ -21,6 +22,7 @@ export const UserNode = node<UserSource>({
     firstName: t.string({
       resolve: (user) => user.name.split(' ')[0],
     }),
+    hoge: t.exposeString('hoge')
   }),
 })
  
@@ -31,5 +33,6 @@ async function getUsers(ids: string[]): Promise<UserSource[]> {
     id,
     name: `Peter #${id}`,
     avatar_url: `https://i.pravatar.cc/300?u=${id}`,
+    hoge: `hogehoge`,
   }))
 }
