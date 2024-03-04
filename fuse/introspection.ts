@@ -209,6 +209,15 @@ const introspection = {
             "args": []
           },
           {
+            "name": "hoge",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
             "name": "id",
             "type": {
               "kind": "NON_NULL",
